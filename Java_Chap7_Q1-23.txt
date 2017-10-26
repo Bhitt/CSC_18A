@@ -1,0 +1,29 @@
+Review Q's 1-23
+-----------------
+1)b
+2)a
+3)b
+4)d
+5)c
+6)c
+7)b
+8)a
+9)d
+10)a
+11)c
+12)a
+13)a
+14)True
+15)False
+16)False
+17)True
+18)True
+19)False
+20)True
+21)False
+22)True
+23)True
+
+ Programming Challenge
+ ----------------
+ 11)
