@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* QuitGameMenuItem class that - allows the player to exit the program from the Menu
+ * 
+ * 
+ * 
  */
 
 package haunted_house;
@@ -12,4 +12,17 @@ package haunted_house;
  */
 public class QuitGameMenuItem extends MenuItem{
     
+    
+    
+    @Override
+    public boolean doThing(){
+         //Test string
+        System.out.println("Goodbye");
+        return true;
+    }
+    
+    @Override
+    public String printYoSelf(){
+        return "Quit the Application";
+    }
 }

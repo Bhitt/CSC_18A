@@ -1,22 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Fall 2017 CIS18A Java Final Project
+ * Project Members: Branden Hitt, 
+ * Main program execution starts here
+ * Purpose: Gothic themed, roque-like dungeon crawler video game 
+ *          which utilizes concepts learned in class.
+ * 
  */
 
 package haunted_house;
 
 /**
  *
- * @author ncc
+ * 
  */
 public class Haunted_House {
 
     /**
-     * @param args the command line arguments
+     * main application starts here
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Create a menu and run application content
+        Menu m = new Menu();
+        
+        //exit stage right  
     }
     
 }

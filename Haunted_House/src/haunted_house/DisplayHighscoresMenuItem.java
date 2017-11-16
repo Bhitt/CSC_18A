@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* DisplayHighscoresMenuItem class that - derives from menu item
+ *                                      - loads in a CSV file
+ *                                      - ouputs the CVS file contents to the user
+ * 
  */
 
 package haunted_house;
@@ -12,4 +12,17 @@ package haunted_house;
  */
 public class DisplayHighscoresMenuItem extends MenuItem {
     
+    
+    
+    @Override
+    public boolean doThing(){
+         //Test string
+        System.out.println("You displayed high scores");
+        return false;
+    }
+    
+    @Override
+    public String printYoSelf(){
+        return "View High Scores";
+    }
 }

@@ -1,15 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Skeleton class that - derives from the Enemy class
+ *                     - has unique stats
+ *                     - displays an ascii picture of itself
+ * 
  */
 
 package haunted_house;
 
 /**
  *
- * @author ncc
+ * 
  */
 public class Skeleton extends Enemy {
     
+    
+    
+    
+    @Override
+    public String printYoSelf(){
+        return "";
+    }
 }

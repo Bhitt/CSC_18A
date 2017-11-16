@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* MenuItem abstract class that - other MenuItem classes can derive from
+ *                              - specifies what all MenuItem class need
+ * 
+ * 
  */
 
 package haunted_house;
 
 /**
  *
- * @author ncc
+ * 
  */
-public class MenuItem {
-    
+public abstract class MenuItem {
+    public abstract boolean doThing();
+    public abstract String printYoSelf();
 }
