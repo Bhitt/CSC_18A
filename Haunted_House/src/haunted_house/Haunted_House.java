@@ -20,7 +20,7 @@ public class Haunted_House {
     public static void main(String[] args) {
         //Create a menu and run application content
         Menu m = new Menu();
-        
+//        HighScoreIO hi = new HighScoreIO();
         //exit stage right  
     }
     

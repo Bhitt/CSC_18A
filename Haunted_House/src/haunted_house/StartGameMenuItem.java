@@ -11,12 +11,18 @@ package haunted_house;
  * @author ncc
  */
 public class StartGameMenuItem extends MenuItem{
+    private Game gameInstance;
     
+    
+    public StartGameMenuItem(){
+        gameInstance = new Game();
+    }
     
     @Override
     public boolean doThing(){
         //Test string
         System.out.println("You started a new game");
+        
         
         return false;
     }
