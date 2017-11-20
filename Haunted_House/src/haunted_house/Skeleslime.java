@@ -13,7 +13,7 @@ package haunted_house;
 public class Skeleslime extends Enemy{
     
     @Override
-    public String printYoSelf(){
-        return "";
+    public void printYoSelf(){
+        
     }
 }

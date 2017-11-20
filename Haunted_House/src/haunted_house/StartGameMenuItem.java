@@ -11,19 +11,22 @@ package haunted_house;
  * @author ncc
  */
 public class StartGameMenuItem extends MenuItem{
-    private Game gameInstance;
     
     
     public StartGameMenuItem(){
-        gameInstance = new Game();
+        
     }
     
     @Override
     public boolean doThing(){
-        //Test string
-        System.out.println("You started a new game");
+        //Grab the singleton Game instance and set the values to a new game
+        Game.getInstance().setNewGame();
         
+        //begin game loop
         
+        //output final stats after death
+        
+        //return false to return to the main menu
         return false;
     }
     

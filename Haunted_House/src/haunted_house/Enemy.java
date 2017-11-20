@@ -17,5 +17,5 @@ public abstract class Enemy {
     Integer health;
     Integer attackValue;
     
-    public abstract String printYoSelf();
+    public abstract void printYoSelf();
 }

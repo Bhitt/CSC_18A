@@ -1,4 +1,4 @@
-/* Player class that    - implements a player for the game
+/* Player class that    - implements a singleton player object for the game
  *                      - contains a value for name
  *                      - contains a value for max health
  *                      - contains a value for current health
@@ -20,19 +20,36 @@ public class Player {
     private int currentHealth;
     private int attackVal;
     private int hitChance;
+    public static Player _instance;
     
     
     
-    public Player(){
+    private Player(){
         this.maxHealth = 100;
         this.currentHealth = 100;
         this.attackVal = 10;
         this.hitChance = 70;
-        
-        this.name = JOptionPane.showInputDialog("What shall we write on your gravestone:");
+        this.name = "John Doe";
+        //this.name = JOptionPane.showInputDialog("What shall it read on your gravestone?");
     }
 
+    
+    public static Player getInstance(){
+        if(_instance != null){
+            System.out.println("Found player instance");
+            return _instance;
+        } else {
+            _instance = new Player();
+            System.out.println("Created new player instance");
+            return _instance;
+        }
+    }
 
+    public void promptName(){
+        this.name = JOptionPane.showInputDialog("What shall it read on your gravestone?");
+        
+    }
+    
     public String getName() {
         return name;
     }

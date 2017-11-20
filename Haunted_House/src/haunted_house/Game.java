@@ -6,50 +6,52 @@
 
 package haunted_house;
 
+import java.awt.Font;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author ncc
  */
 public class Game {
-    private Player player;
+    //private Player player;
     private static final String FILENAME = "HighScores.csv";
-    //public static Game _instance;
+    public static Game _instance;
     
-    public Game(){
-        //create the player
-        player = new Player();
+    private Game(){
+        //default constructor for singleton Game object
         
-        showStats();
-        //welcome the player and output the stats
-        
-        
-        
-        //save the highscore (currently test case)
-        //saveHighScore();
     }
     
-    //second constructor to load in a previous game
+    public void setNewGame(){
+        Player.getInstance().promptName();
+        System.out.println("something happened");
+    }
     
-//    public static Game getInstance(){
-//        if(_instance != null){
-//            return _instance;
-//        }else{
-//            _instance = new Game();
-//            return _instance;
-//        }
-//    }
+    
+    public void testFunction(){
+//
+
+    }
+    public static Game getInstance(){
+        if(_instance != null){
+            return _instance;
+        }else{
+            _instance = new Game();
+            return _instance;
+        }
+    }
     public void showStats(){
         StringBuilder output = new StringBuilder();
-        output.append(player.getName() + "\n" )
-              .append("Current HP: " + player.getCurrentHealth() + "\n")
-              .append("Attack Power: " + player.getAttackVal());
+        output.append(Player.getInstance().getName() + "\n" )
+              .append("Current HP: " + Player.getInstance().getCurrentHealth() + "\n")
+              .append("Attack Power: " + Player.getInstance().getAttackVal());
         
         JOptionPane.showMessageDialog(null, output, "Player Status", JOptionPane.PLAIN_MESSAGE);
     }
