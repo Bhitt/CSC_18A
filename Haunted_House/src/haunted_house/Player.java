@@ -36,11 +36,11 @@ public class Player {
     
     public static Player getInstance(){
         if(_instance != null){
-            System.out.println("Found player instance");
+            //System.out.println("Found player instance");
             return _instance;
         } else {
             _instance = new Player();
-            System.out.println("Created new player instance");
+            //System.out.println("Created new player instance");
             return _instance;
         }
     }

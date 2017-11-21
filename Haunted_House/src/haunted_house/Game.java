@@ -31,12 +31,34 @@ public class Game {
     
     public void setNewGame(){
         Player.getInstance().promptName();
-        System.out.println("something happened");
+        showStats();
+    }
+    
+    public boolean gameLoop(){
+        boolean exit = false;
+        //continue the loop until gameplay is ended (death or exitting)
+        do{
+            //enter into a room (build it)
+    
+            //spawn enemies
+        
+            //loop through enemies for fight
+        
+            //give rewards if alive
+        
+            //check for save point if alive
+        
+            //check for death
+            
+        }while(!exit);
+        
+        //return true for death or false for alive and exiting through save
+        return true;
     }
     
     
     public void testFunction(){
-//
+    //
 
     }
     public static Game getInstance(){
