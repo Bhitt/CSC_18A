@@ -6,34 +6,45 @@
 
 package haunted_house;
 
-import java.awt.Font;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 
 /**
  *
  * @author ncc
  */
 public class Game {
-    //private Player player;
-    private static final String FILENAME = "HighScores.csv";
-    public static Game _instance;
+    //Game property
+    public static Game _instance = null;
     
+    //**********************************************************
+    //      Default Constructor for singleton game object
+    //**********************************************************
     private Game(){
-        //default constructor for singleton Game object
-        
+
     }
     
+    //**********************************************************
+    //             Set up for a new Game
+    //**********************************************************
     public void setNewGame(){
+        //create a new character
         Player.getInstance().promptName();
+        //output the stats chosen
         showStats();
     }
     
+    //**********************************************************
+    //              Load a previous save game
+    //**********************************************************
+    public void loadGame(){
+        //optional method
+        
+    }
+    
+    //**********************************************************
+    //           Game loop that runs through game actions
+    //**********************************************************
     public boolean gameLoop(){
         boolean exit = false;
         //continue the loop until gameplay is ended (death or exitting)
@@ -43,85 +54,67 @@ public class Game {
             //spawn enemies
         
             //loop through enemies for fight
-        
+            
             //give rewards if alive
         
             //check for save point if alive
         
             //check for death
             
+            
+            //temporary exit assignment
+            exit = true;
         }while(!exit);
-        
         //return true for death or false for alive and exiting through save
         return true;
     }
     
-    
+    //**********************************************************
+    //           Test function for testing purposes
+    //**********************************************************
     public void testFunction(){
     //
-
+        System.out.println("This is a test");
     }
+    
+    //**********************************************************
+    //            Maintains game object as a singleton
+    //**********************************************************
     public static Game getInstance(){
         if(_instance != null){
+            //System.out.println("Game instance found");
             return _instance;
         }else{
             _instance = new Game();
+            //System.out.println("Game instance created");
             return _instance;
         }
     }
+    
+    //**********************************************************
+    //             Show the current game stats
+    //**********************************************************
     public void showStats(){
         StringBuilder output = new StringBuilder();
-        output.append(Player.getInstance().getName() + "\n" )
-              .append("Current HP: " + Player.getInstance().getCurrentHealth() + "\n")
-              .append("Attack Power: " + Player.getInstance().getAttackVal());
-        
+        output.append(Player.getInstance().getName()).append("\n" )
+              .append("Current HP: ").append(Player.getInstance().getCurrentHealth()).append("\n")
+              .append("Attack Power: ").append(Player.getInstance().getAttackVal()).append("\n")
+              .append("Rooms Cleared: ").append(Player.getInstance().getRoomsCleared());
         JOptionPane.showMessageDialog(null, output, "Player Status", JOptionPane.PLAIN_MESSAGE);
     }
+    
+    //**********************************************************
+    //             Spawn a Room
+    //**********************************************************
     public void spawnRoom(){
         
     }
     
+    //**********************************************************
+    //             Spawn an Enemy
+    //**********************************************************
     public void spawnEnemy(){
         
-    }
-    
-    public void saveHighScore(){
-        BufferedWriter bw =null;
-        FileWriter fw = null;
-        boolean addHeader = false;
-        
-        try {
-            String data = "Branden, 57843\n";
-            
-            File file = new File(FILENAME);
-            
-            //If the file doesn't exist, then create it
-            if(!file.exists()){
-                addHeader = true;
-                file.createNewFile();
-                
-            }
-            
-            //true = append file
-            fw = new FileWriter(file.getAbsoluteFile(),true);
-            bw = new BufferedWriter(fw);
-            
-            if(addHeader) bw.write("PLAYER NAME,SCORE\n");
-            bw.write(data);
-            
-            System.out.println("Data saved to a file.");
-            
-        } catch(IOException e){
-            e.printStackTrace();
-            
-        } finally {
-            try {
-                if (bw != null) bw.close();
-                if (fw != null) fw.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
     }
     
     

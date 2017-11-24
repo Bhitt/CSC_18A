@@ -18,7 +18,9 @@ public class Skeleton extends Enemy {
     
     
     
-    
+    //**********************************************************
+    //             Display a skeleton to the screen
+    //**********************************************************
     @Override
     public void printYoSelf(){
         StringBuilder output = new StringBuilder();

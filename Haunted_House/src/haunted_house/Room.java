@@ -11,6 +11,7 @@ package haunted_house;
  * @author ncc
  */
 public abstract class Room {
+    //Room properties
     String type;
     Integer numEnemies;
     Integer aliveEnemies;

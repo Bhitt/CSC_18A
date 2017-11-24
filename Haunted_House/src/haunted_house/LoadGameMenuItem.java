@@ -13,7 +13,9 @@ package haunted_house;
 public class LoadGameMenuItem extends MenuItem{
    
     
-    
+    //**********************************************************
+    //             Perform the load game action
+    //**********************************************************
     @Override
     public boolean doThing(){
          //Test string
@@ -21,6 +23,9 @@ public class LoadGameMenuItem extends MenuItem{
         return false;
     }
     
+    //**********************************************************
+    //             Display load game action to user
+    //**********************************************************
     @Override
     public String printYoSelf(){
         return "Load a Game from a saved file";

@@ -13,9 +13,13 @@ package haunted_house;
  * @author ncc
  */
 public abstract class Enemy {
+    //Enemy properties
     String type;
     Integer health;
     Integer attackValue;
     
+    //**********************************************************
+    //      Required method -  displays picture of enemy 
+    //**********************************************************
     public abstract void printYoSelf();
 }
