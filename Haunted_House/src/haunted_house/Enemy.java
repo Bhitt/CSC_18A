@@ -19,13 +19,7 @@ public abstract class Enemy {
     
     public abstract String printYoSelf();
     
-    public abstract Integer getHealth()
-    {
-        return this.health;   
-    }
+    public abstract Integer getHealth();
     
-    public abstract Integer getAttackValue()
-    {
-        return attackValue;   
-    }
+    public abstract Integer getAttackValue();
 }
