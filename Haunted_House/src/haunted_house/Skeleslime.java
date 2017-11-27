@@ -17,6 +17,7 @@ public class Skeleslime extends Enemy{
     
     @Override
     public String printYoSelf(){
+        // Prints/returns ascii art of a Skeleslime
         return "";
     }
     
