@@ -11,11 +11,25 @@ package haunted_house;
  * 
  */
 public class Zombie extends Enemy{
-    
-    
+   String type;
+    Integer health;
+    Integer attack;
     
     @Override
     public String printYoSelf(){
         return "";
     }
+    
+    public String getType(){
+        return this.health;
+    }
+    
+    public Integer getHealth(){
+        return this.health;
+    }
+    
+    public Integer getAttack(){
+        return this.attack;   
+    }
+    
 }
