@@ -19,6 +19,8 @@ public abstract class Enemy {
     
     public abstract String printYoSelf();
     
+    public abstract String getType();
+    
     public abstract Integer getHealth();
     
     public abstract Integer getAttackValue();
