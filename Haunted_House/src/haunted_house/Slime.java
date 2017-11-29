@@ -20,18 +20,15 @@ public class Slime extends Enemy{
         return "";
     }
     
-    public String getType()
-    {
+    public String getType(){
         return this.health;
     }
     
-    public Integer getHealth()
-    {
+    public Integer getHealth(){
         return this.health;
     }
     
-    public Integer getAttack()
-    {
+    public Integer getAttack(){
        System.out.println("The slime tries to swallow you whole!");
         return this.attack;   
     }
