@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/HighScoreIO.java</file>
-            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Player.java</file>
-            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Haunted_House.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Skeleslime.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Slime.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Zombie.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Enemy.java</file>
             <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Game.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Player.java</file>
             <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Menu.java</file>
             <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Skeleton.java</file>
+            <file>file:/C:/Users/bhitt/Desktop/CSC_18A/Haunted_House/src/haunted_house/Haunted_House.java</file>
         </group>
     </open-files>
 </project-private>

@@ -15,9 +15,9 @@ import javax.swing.JTextArea;
  * 
  */
 public class Zombie extends Enemy{
-   String type;
-    Integer health;
-    Integer attackValue;
+    //String type;
+    //Integer health;
+    //Integer attackValue;
     
     @Override
     public void printYoSelf(){
@@ -37,16 +37,19 @@ public class Zombie extends Enemy{
             JOptionPane.showMessageDialog(null, tArea, " ZOMBIE!", JOptionPane.PLAIN_MESSAGE);
     }
     
+    @Override
     public String getType(){
-       return this.health;
+       return this.type;
     }
     
+    @Override
     public Integer getHealth(){
        return this.health;
     }
     
+    @Override
     public Integer getAttackValue(){
-       Sytem.out.println("The zombie rushes out and bites you!");
+       System.out.println("The zombie rushes out and bites you!");
        return this.attackValue;   
     }
     
