@@ -8,16 +8,26 @@ package haunted_house;
 
 /**
  *
- * @author ncc
  */
 public class StartGameMenuItem extends MenuItem{
     
+    public StartGameMenuItem(){
+    }
     
     @Override
     public boolean doThing(){
-        //Test string
-        System.out.println("You started a new game");
+        boolean isDead = false;
+        //Grab the singleton Game instance and set the values to a new game
+        Game.getInstance().setNewGame();
+        //begin game loop
+        isDead = Game.getInstance().gameLoop();
+        //if player died 
         
+            //give output showing tombstone
+            
+            //also update the highscores list
+        
+        //return to main menu
         return false;
     }
     
@@ -25,4 +35,6 @@ public class StartGameMenuItem extends MenuItem{
     public String printYoSelf(){
         return "Start a New Game";
     }
+    
+    
 }

@@ -1,0 +1,35 @@
+        public void skeletonPrintYoSelf(){
+            StringBuilder output = new StringBuilder();
+            output.append("   .-\"\"-. \n")
+                  .append("  / _  _ \\\n")
+                  .append("  |(_)(_)|\n")
+                  .append("  (_ /\\ _)\n")
+                  .append("   |wwww| \n")
+                  .append("   \'-..-\' \n");
+            System.out.print(output);
+        }
+        
+        public void zombiePrintYoSelf(){
+            StringBuilder output = new StringBuilder();
+            output.append("        .wwww.         \n")
+                  .append("       | _  _ |        \n")
+                  .append("!!!!   | O  o |    \\\\\\\\\n")
+                  .append("!||!_/ (_ -- _)  \\_!||!\n")
+                  .append("\\   /   |.--.|    \\   /\n")
+                  .append(" ) |    ||__||     ) / \n")
+                  .append(" | |    '-..-'    / /  \n");
+            System.out.print(output);
+        }
+        
+        public void slimePrintYoSelf(){
+            StringBuilder output = new StringBuilder();
+            output.append("    .--.     \n")
+                  .append("   /@@ \\_    \n")
+                  .append(" __\\^  / )   \n")
+                  .append("(__/    /    \n")
+                  .append("  /     \\    \n")
+                  .append(" /       \\__ \n")
+                  .append(" \\_.-._._   )\n")
+                  .append("         `-` \n");
+            System.out.print(output);
+        }

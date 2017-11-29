@@ -13,14 +13,20 @@ package haunted_house;
 public class DisplayHighscoresMenuItem extends MenuItem {
     
     
-    
+    //**********************************************************
+    //                 Perform Menu Item Action
+    //**********************************************************
     @Override
     public boolean doThing(){
-         //Test string
-        System.out.println("You displayed high scores");
+        //Create HighScoreIO object
+        HighScoreIO placard = new HighScoreIO();
+        placard.displayHighScores();
         return false;
     }
     
+    //**********************************************************
+    //                 Print string for menu prompt
+    //**********************************************************
     @Override
     public String printYoSelf(){
         return "View High Scores";

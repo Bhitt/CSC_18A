@@ -1,0 +1,12 @@
+StringBuilder output = new StringBuilder();
+            output.append("   .-\"\"-. \n")
+                  .append("  / _  _ \\\n")
+                  .append("  |(_)(_)|\n")
+                  .append("  (_ /\\ _)\n")
+                  .append("   |wwww| \n")
+                  .append("   \'-..-\' \n");
+            
+        JTextArea tArea = new JTextArea(8, 8); //height and width values
+        tArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20)); //the last number is font size
+        tArea.setText(output.toString());
+        JOptionPane.showMessageDialog(null, tArea);

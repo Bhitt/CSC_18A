@@ -6,6 +6,10 @@
 
 package haunted_house;
 
+import java.awt.Font;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
 /**
  *
  * 
@@ -16,8 +20,21 @@ public class Zombie extends Enemy{
     Integer attackValue;
     
     @Override
-    public String printYoSelf(){
-       return "";
+    public void printYoSelf(){
+        StringBuilder output = new StringBuilder();
+            output.append("         .wwww. \n")
+                  .append("        | _  _ | \n")
+                  .append("!!!!    | O  o |     \\\\\\\\\n")
+                  .append("!||!_/  (_ -- _)   \\_!||!\n")
+                  .append("\\   /    |.--.|     \\   /\n")
+                  .append(" ) |     ||__||      ) /\n")
+                  .append(" | | _.--'.__.'--._ / /\n")
+                  .append(" \\  '              ' /");
+            
+            JTextArea tArea = new JTextArea(1, 1);
+            tArea.setFont(new Font(Font.MONOSPACED, Font.BOLD, 20));
+            tArea.setText(output.toString());
+            JOptionPane.showMessageDialog(null, tArea, " ZOMBIE!", JOptionPane.PLAIN_MESSAGE);
     }
     
     public String getType(){

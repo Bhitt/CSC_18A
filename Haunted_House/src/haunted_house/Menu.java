@@ -17,11 +17,14 @@ import java.util.Scanner;
  *
  * 
  */
-public class Menu {
-    private ArrayList<MenuItem> menuItems;
+public final class Menu {
+    //Menu Properties
+    private final ArrayList<MenuItem> menuItems;
     private boolean exitMenuStatus;
     
-    //Constructor for the menu
+    //**********************************************************
+    //                Default Constructor 
+    //**********************************************************
     public Menu(){
         //initiate exitMenuStatus to false
         exitMenuStatus = false;
@@ -33,19 +36,22 @@ public class Menu {
         this.menuItems.add(new DisplayHighscoresMenuItem()); //display high scores
         this.menuItems.add(new QuitGameMenuItem());          //quit the application
         //begin menu loop
-        runMenuLoop();
+        menuLoop();
     }
     
-    //Method - menu loop that handles menu logic
-    public void runMenuLoop(){
+    //**********************************************************
+    //                 Menu Loop 
+    //**********************************************************
+    public void menuLoop(){
         //run menu loop
         do{
+            //Player.getInstance().promptName();
             //print the menu
             this.printMenu();
             //choose menu option
             Integer selection = this.getMenuItem();
-            System.out.println("************************************");
-            System.out.println();
+            System.out.println("*******************************\n");
+            //System.out.println();
             //validate the choice
             if(this.validateMenuOption(selection)){
                 //execute menu option
@@ -57,14 +63,17 @@ public class Menu {
         }while(!exitMenuStatus);
     }
     
-    //Method - Print the menu to the user
+    //**********************************************************
+    //                 Print the menu to the user 
+    //**********************************************************
     private void printMenu(){
         //build a string of the menu to print
         StringBuilder menuString = new StringBuilder();
-        menuString.append("Welcome to the Haunted House. Please choose from the following:\n");
+        menuString.append("*******************************\n")
+                  .append("Welcome to the Haunted House. Please choose from the following:\n");
         //loop through and add menu item choices to the string
         for(int i=0;i<menuItems.size();i++){
-            menuString.append((i+1) + ":" + menuItems.get(i).printYoSelf() + "\n");
+            menuString.append((i+1)).append(":").append(menuItems.get(i).printYoSelf()).append("\n");
         }
         //add the final prompt
         menuString.append("Enter your option:");
@@ -72,21 +81,27 @@ public class Menu {
         System.out.println(menuString);
     }
     
-    //Method - grab input from user for menu choice
+    //**********************************************************
+    //          Grab input from the user for menu choice
+    //**********************************************************
     private Integer getMenuItem(){
         //create scanner
         Scanner input = new Scanner(System.in);
         //return next Integer
-        return input.nextInt();
+        return  input.nextInt();
     }
     
-    //Method - validate the menu option chosen by the user
+    //**********************************************************
+    //          Validate menu option chosen by the user 
+    //**********************************************************
     private boolean validateMenuOption(Integer selection){
         //return true or false depending on if the choice exists
         return (selection > 0 && selection <= menuItems.size());
     }
     
-    //Method - perform the action according to the menu choice
+    //**********************************************************
+    //                 Perform Action of menu choice
+    //**********************************************************
     private boolean performAction(Integer selection){
         //the choice (subtract one) should match the index of items in the array
         return menuItems.get(selection - 1).doThing();

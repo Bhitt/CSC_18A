@@ -16,9 +16,8 @@ public class Skeleslime extends Enemy{
     Integer attackValue;
     
     @Override
-    public String printYoSelf(){
-        // Prints/returns ascii art of a Skeleslime
-        return "";
+    public void printYoSelf(){
+        
     }
     
     public String getType(){

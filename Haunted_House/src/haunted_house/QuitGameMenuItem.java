@@ -13,7 +13,9 @@ package haunted_house;
 public class QuitGameMenuItem extends MenuItem{
     
     
-    
+    //**********************************************************
+    //          Perform the Quit action from the menu 
+    //**********************************************************
     @Override
     public boolean doThing(){
          //Test string
@@ -21,6 +23,9 @@ public class QuitGameMenuItem extends MenuItem{
         return true;
     }
     
+    //**********************************************************
+    //          Display menu action description to user
+    //**********************************************************
     @Override
     public String printYoSelf(){
         return "Quit the Application";
