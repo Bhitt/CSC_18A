@@ -33,13 +33,7 @@ public class Skeleslime extends Enemy{
     
     public Integer getAttack()
     {
-        return this.attack;   
-    }
-    
-    public Integer skeleslimeAttacks()
-    {
-        //IDK if this should be kept or something but for now, this will be here.
         System.out.println("The Skeleslime swings a green gelatanous arm at you!");
-        return this.getAttack();
+        return this.attack;   
     }
 }
