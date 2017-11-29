@@ -17,19 +17,20 @@ public class Zombie extends Enemy{
     
     @Override
     public String printYoSelf(){
-        return "";
+       return "";
     }
     
     public String getType(){
-        return this.health;
+       return this.health;
     }
     
     public Integer getHealth(){
-        return this.health;
+       return this.health;
     }
     
     public Integer getAttack(){
-        return this.attack;   
+       Sytem.out.println("The zombie rushes out and bites you!");
+       return this.attack;   
     }
     
 }
