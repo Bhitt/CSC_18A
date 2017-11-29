@@ -13,7 +13,7 @@ package haunted_house;
 public class Zombie extends Enemy{
    String type;
     Integer health;
-    Integer attack;
+    Integer attackValue;
     
     @Override
     public String printYoSelf(){
@@ -28,9 +28,9 @@ public class Zombie extends Enemy{
        return this.health;
     }
     
-    public Integer getAttack(){
+    public Integer getAttackValue(){
        Sytem.out.println("The zombie rushes out and bites you!");
-       return this.attack;   
+       return this.attackValue;   
     }
     
 }
