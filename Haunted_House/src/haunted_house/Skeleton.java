@@ -13,7 +13,7 @@ package haunted_house;
 public class Skeleton extends Enemy {
     String type;
     Integer health;
-    Integer attack;
+    Integer attackValue;
     
     @Override
     public String printYoSelf(){
@@ -28,7 +28,7 @@ public class Skeleton extends Enemy {
         return this.health;
     }
     
-    public Integer getAttack(){
+    public Integer getAttackValue(){
         System.out.println("The skeleton swings his old, rusty sword at you!");
         return this.attack;   
     }
