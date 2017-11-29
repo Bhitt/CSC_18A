@@ -20,21 +20,17 @@ public class Skeleton extends Enemy {
         return "";
     }
     
-    public String getType()
-    {
+    public String getType(){
         return this.health;
     }
     
-    public Integer getHealth()
-    {
+    public Integer getHealth(){
         return this.health;
     }
     
-    public Integer getAttack()
-    {
+    public Integer getAttack(){
+        System.out.println("The skeleton swings his old, rusty sword at you!");
         return this.attack;   
-    }
-
     }
 
 }
