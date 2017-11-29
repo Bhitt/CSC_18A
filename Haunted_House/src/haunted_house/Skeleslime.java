@@ -29,7 +29,7 @@ public class Skeleslime extends Enemy{
         return this.health;
     }
     
-    public Integer getAttack(){
+    public Integer getAttackValue(){
         System.out.println("The Skeleslime swings a green gelatanous arm at you!");
         return this.attack;   
     }
