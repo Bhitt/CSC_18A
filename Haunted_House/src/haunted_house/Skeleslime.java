@@ -21,18 +21,15 @@ public class Skeleslime extends Enemy{
         return "";
     }
     
-    public String getType()
-    {
+    public String getType(){
         return this.health;
     }
     
-    public Integer getHealth()
-    {
+    public Integer getHealth(){
         return this.health;
     }
     
-    public Integer getAttack()
-    {
+    public Integer getAttack(){
         System.out.println("The Skeleslime swings a green gelatanous arm at you!");
         return this.attack;   
     }
