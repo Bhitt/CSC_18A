@@ -31,6 +31,6 @@ public class Skeleslime extends Enemy{
     
     public Integer getAttackValue(){
         System.out.println("The Skeleslime swings a green gelatanous arm at you!");
-        return this.attack;   
+        return this.attackValue;   
     }
 }
