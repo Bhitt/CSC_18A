@@ -30,7 +30,7 @@ public class Skeleton extends Enemy {
     
     public Integer getAttackValue(){
         System.out.println("The skeleton swings his old, rusty sword at you!");
-        return this.attack;   
+        return this.attackValue;   
     }
 
 }
