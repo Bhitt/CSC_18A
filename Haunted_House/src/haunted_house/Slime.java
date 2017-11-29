@@ -30,7 +30,7 @@ public class Slime extends Enemy{
     
     public Integer getAttackValue(){
        System.out.println("The slime tries to swallow you whole!");
-        return this.attack;   
+        return this.attackValue;   
     }
     
 }
