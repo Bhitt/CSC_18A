@@ -16,9 +16,12 @@ import javax.swing.JTextArea;
  * 
  */
 public class Slime extends Enemy{
-    //String type;
-    //Integer health;
-    //Integer attackValue;
+    //**********************************************************
+    //             Default Constructor
+    //**********************************************************
+    Slime(){
+        super("Slime",(2*Game.getInstance().getCurHealthModifier()),(2*Game.getInstance().getCurDamageModifier()));
+    }
     
     @Override
     public void printYoSelf(){
@@ -39,21 +42,13 @@ public class Slime extends Enemy{
             //tArea.setForeground(Color.GREEN);
             JOptionPane.showMessageDialog(null, tArea, " SLIME!", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
     @Override
-    public String getType(){
-        return this.type;
-    }
-    
-    @Override
-    public Integer getHealth(){
-        return this.health;
-    }
-    
-    @Override
-    public Integer getAttackValue(){
-       System.out.println("The slime tries to swallow you whole!");
-        return this.attackValue;   
+    public void printYoAttack() {
+         StringBuilder output = new StringBuilder();
+            output.append("The slime tries to swallow you whole!\n")
+                  .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
+            JOptionPane.showMessageDialog(null,output);
     }
     
 }

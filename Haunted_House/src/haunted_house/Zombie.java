@@ -15,9 +15,13 @@ import javax.swing.JTextArea;
  * 
  */
 public class Zombie extends Enemy{
-    //String type;
-    //Integer health;
-    //Integer attackValue;
+    //A skeleton but with more stuff
+    //**********************************************************
+    //             Default Constructor
+    //**********************************************************
+    Zombie(){
+        super("Zombie",(8*Game.getInstance().getCurHealthModifier()),(8*Game.getInstance().getCurDamageModifier()));
+    }
     
     @Override
     public void printYoSelf(){
@@ -36,21 +40,13 @@ public class Zombie extends Enemy{
             tArea.setText(output.toString());
             JOptionPane.showMessageDialog(null, tArea, " ZOMBIE!", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
     @Override
-    public String getType(){
-       return this.type;
-    }
-    
-    @Override
-    public Integer getHealth(){
-       return this.health;
-    }
-    
-    @Override
-    public Integer getAttackValue(){
-       System.out.println("The zombie rushes out and bites you!");
-       return this.attackValue;   
+    public void printYoAttack() {
+         StringBuilder output = new StringBuilder();
+            output.append("The zombie rushes out and bites you!\n")
+                  .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
+            JOptionPane.showMessageDialog(null,output);
     }
     
 }

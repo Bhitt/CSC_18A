@@ -1,0 +1,29 @@
+public static void main(String[] args) {
+        String userInput;
+        Boolean validEntry = false;
+        Scanner input = new Scanner(System.in);
+        Validation validate = new Validation();
+        
+        System.out.println("Enter a number: ");
+        
+        userInput = input.next();
+        validEntry = validate.validationCheck(userInput);
+        while (validEntry == false){
+            System.out.print("Wrong input. Try again: ");
+            userInput = input.next();
+            validEntry = validate.validationCheck(userInput);
+        }         
+    }
+
+
+
+    public class Validation {
+
+    public boolean validationCheck (String userInput){
+        if (!(userInput.matches("[0-9]+"))){
+            return false;
+        } else {
+            return true;
+        }
+    }
+}

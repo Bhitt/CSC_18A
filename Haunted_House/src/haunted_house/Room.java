@@ -6,6 +6,8 @@
 
 package haunted_house;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ncc
@@ -13,7 +15,16 @@ package haunted_house;
 public abstract class Room {
     //Room properties
     String type;
-    Integer numEnemies;
-    Integer aliveEnemies;
-    Integer numHiddenItems;
+    //**********************************************************
+    //      Required method -  displays text for win 
+    //**********************************************************
+    public abstract void printGreeting();
+    //**********************************************************
+    //      Required method -  displays text for win 
+    //**********************************************************
+    public abstract void printVictory();
+    //**********************************************************
+    //      Required method -  displays picture of room 
+    //**********************************************************
+    public abstract void printYoRoom();
 }

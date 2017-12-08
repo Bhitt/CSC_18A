@@ -6,33 +6,57 @@
 
 package haunted_house;
 
+import java.awt.Font;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author ncc
  */
 public class Skeleslime extends Enemy{
-    //String type;
-    //Integer health;
-    //Integer attackValue;
+    //**********************************************************
+    //             Default Constructor
+    //**********************************************************
+    Skeleslime(){
+        super("SkeleSlime",(15*Game.getInstance().getCurHealthModifier()),(15*Game.getInstance().getCurDamageModifier()));
+    }
     
     @Override
     public void printYoSelf(){
-        
+        StringBuilder output = new StringBuilder();
+            output.append(  "        __.,,------.._\n" +
+                            "     ,'\"   _      _   \"`.\n" +
+                            "    /.__, ._  -=- _\"`    Y\n" +
+                            "   (.____.-.`      \"\"`   j\n" +
+                            "    VvvvvvV`.Y,.    _.,-'       ,     ,     ,\n" +
+                            "        Y    ||,   '\"\\         ,/    ,/    ./\n" +
+                            "        |   ,'  ,     `-..,'_,'/___,'/   ,'/   ,\n" +
+                            "   ..  ,;,,',-'\"\\,'  ,  .     '     ' \"\"' '--,/    .. ..\n" +
+                            " ,'. `.`---'     `, /  , Y -=-    ,'   ,   ,. .`-..||_|| ..\n" +
+                            "ff\\\\`. `._        /f ,'j j , ,' ,   , f ,  \\=\\ Y   || ||`||_..\n" +
+                            "l` \\` `.`.\"`-..,-' j  /./ /, , / , / /l \\   \\=\\l   || `' || ||...\n" +
+                            " `  `   `-._ `-.,-/ ,' /`\"/-/-/-/-\"'''\"`.`.  `'.\\--`'--..`'_`' || ,\n" +
+                            "            \"`-_,',  ,'  f    ,   /      `._    ``._     ,  `-.`'//         ,\n" +
+                            "          ,-\"'' _.,-'    l_,-'_,,'          \"`-._ . \"`. /|     `.'\\ ,       |\n" +
+                            "        ,',.,-'\"          \\=) ,`-.         ,    `-'._`.V |       \\ // .. . /j\n" +
+                            "        |f\\\\               `._ )-.\"`.     /|         `.| |        `.`-||-\\\\/\n" +
+                            "        l` \\`                 \"`._   \"`--' j          j' j          `-`---'\n" +
+                            "         `  `                     \"`_,-','/       ,-'\"  /\n" +
+                            "                                 ,'\",__,-'       /,, ,-'\n" +
+                            "                                 Vvv'            VVv'");
+            
+            JTextArea tArea = new JTextArea(1, 1);
+            tArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+            tArea.setText(output.toString());
+            JOptionPane.showMessageDialog(null, tArea, " SKELESLIME!!!!!", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
     @Override
-    public String getType(){
-        return this.type;
-    }
-    
-    @Override
-    public Integer getHealth(){
-        return this.health;
-    }
-    
-    @Override
-    public Integer getAttackValue(){
-        System.out.println("The Skeleslime swings a green gelatanous arm at you!");
-        return this.attackValue;   
+    public void printYoAttack() {
+         StringBuilder output = new StringBuilder();
+            output.append("The Skeleslime swings a green gelatanous arm at you!\n")
+                  .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
+            JOptionPane.showMessageDialog(null,output);
     }
 }

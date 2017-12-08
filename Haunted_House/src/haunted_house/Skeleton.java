@@ -15,11 +15,12 @@ import javax.swing.JTextArea;
  * 
  */
 public class Skeleton extends Enemy {
-    //String type;
-    //Integer health;
-    //Integer attackValue;
-    
-    
+    //**********************************************************
+    //             Default Constructor
+    //**********************************************************
+    Skeleton(){
+        super("Skeleton",(5*Game.getInstance().getCurHealthModifier()),(5*Game.getInstance().getCurDamageModifier()));
+    }
     
     //**********************************************************
     //             Display a skeleton to the screen
@@ -40,21 +41,13 @@ public class Skeleton extends Enemy {
             tArea.setText(output.toString());
             JOptionPane.showMessageDialog(null, tArea, " SKELETON!", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
     @Override
-    public String getType(){
-        return this.type;
-    }
-    
-    @Override
-    public Integer getHealth(){
-        return this.health;
-    }
-    
-    @Override
-    public Integer getAttackValue(){
-        System.out.println("The skeleton swings his old, rusty sword at you!");
-        return this.attackValue;   
+    public void printYoAttack() {
+         StringBuilder output = new StringBuilder();
+            output.append("The skeleton swings his old, rusty sword at you!\n")
+                  .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
+            JOptionPane.showMessageDialog(null,output);
     }
 
 }

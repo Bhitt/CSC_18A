@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+
+        EnemyRandom randomize = new EnemyRandom();
+        int monster;
+        
+        monster = randomize.EnemyRandomn();
+        
+        if (monster == 0){
+            //initialize Skeleton!
+        } else if (monster == 1){
+            //initialize Slime!
+        } else {
+            //initialize Zombie!
+        }
+        
+    }
+
+    public class EnemyRandom {
+            
+        public int EnemyRandomn(){
+            Random rand = new Random();
+            int monster = rand.nextInt(3); 
+            return monster;
+        }
+}

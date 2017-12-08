@@ -127,10 +127,31 @@ public class Player {
     //              Prompt the user to set a player name
     //**********************************************************
     public void promptName(){
+        //reset values with prompt
+        this.maxHealth = 100;
+        this.currentHealth = 100;
+        this.attackVal = 10;
+        this.hitChance = 70;
+        this.roomsCleared = 0;
         //dummy dialog made to keep input window on top
         final JDialog dialog = new JDialog();
         dialog.setAlwaysOnTop(true);   
         this.name = JOptionPane.showInputDialog(dialog,"What shall it read on your gravestone?");
         dialog.dispose();
+    }
+    //**********************************************************
+    //              Prompt the user to set a player name
+    //**********************************************************
+    public void grabAttack(){
+            StringBuilder output = new StringBuilder();
+            output.append("You swing your sword!\n")
+                  .append("It hits for ").append(Player.getInstance().getAttackVal()).append(" damage");
+            JOptionPane.showMessageDialog(null,output);
+    }
+    //**********************************************************
+    //              User takes damage
+    //**********************************************************
+    public void takeDamage(int d){
+        this.currentHealth -= d;
     }
 }

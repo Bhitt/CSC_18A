@@ -14,19 +14,61 @@ package haunted_house;
  */
 public abstract class Enemy {
     //Enemy properties
-    String type;
-    Integer health;
-    Integer attackValue;
+    private String type;
+    private Integer health;
+    private Integer attackValue;
 
-    public abstract String getType();
     
-    public abstract Integer getHealth();
+    Enemy(String t, Integer h, Integer a){
+        this.type = t;
+        this.health = h;
+        this.attackValue = a;
+    }
+    //**********************************************************
+    //      Method -  get/set enemy type
+    //**********************************************************
+    public String getType(){
+        return this.type;
+    };
+    public  void setType(String t){
+        this.type = t;
+    };
     
-    public abstract Integer getAttackValue();
-
+    //**********************************************************
+    //      Required method -  get/set enemy health  
+    //**********************************************************
+    public Integer getHealth(){
+        return this.health;
+    }
+    public  void setHealth(Integer h){
+        this.health = h;
+    }
+    
+    //**********************************************************
+    //      Required method -  gets/set attack value
+    //**********************************************************
+    public  Integer getAttackValue(){
+        return this.attackValue;
+    }
+    public  void setAttackValue(Integer a){
+        this.attackValue = a;
+    }
+    
+    
     //**********************************************************
     //      Required method -  displays picture of enemy 
     //**********************************************************
     public abstract void printYoSelf();
-
+    
+    //**********************************************************
+    //      Required method -  displays picture of enemy 
+    //**********************************************************
+    public abstract void printYoAttack();
+    
+    //**********************************************************
+    //      Required method -  enemy takes damage
+    //**********************************************************
+    public void takeDamage(int d){
+        this.health -= d;
+    }
 }
