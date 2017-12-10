@@ -1,14 +1,13 @@
 /* Garden class that - derives from the Room class
- *                   - holds unique item spawn
+ *                   - holds unique enemy spawn
  *                   - displays unique setting
  * 
  */
 
 package haunted_house;
-
+//library imports
+import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
@@ -25,6 +24,7 @@ public class Garden extends Room{
         //set values
         type = "Garden";
         //print room greeting
+        printYoRoom();
         printGreeting();
         //spawn enemies into game
         Game.getInstance().spawnEnemy(new Beee());
@@ -38,8 +38,9 @@ public class Garden extends Room{
     //**********************************************************
     @Override
     public void printVictory() {
-        System.out.println("Jynkysss, you have defeated my swarm of Bees, how could you!!!!!!");
-	System.out.println("Congrats you have found 3 hidden Items");
+        StringBuilder output = new StringBuilder();
+            output.append("Jynkysss, you have defeated my swarm of Bees, how could you!!!!!!\n");
+        JOptionPane.showMessageDialog(null, output);
     }
 
     //**********************************************************
@@ -47,7 +48,21 @@ public class Garden extends Room{
     //**********************************************************
     @Override
     public void printYoRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        StringBuilder output = new StringBuilder();
+                    output.append(  "  _______ _             _____               _            \n" +
+                                    " |__   __| |           / ____|             | |           \n" +
+                                    "    | |  | |__   ___  | |  __  __ _ _ __ __| | ___ _ __  \n" +
+                                    "    | |  | '_ \\ / _ \\ | | |_ |/ _` | '__/ _` |/ _ \\ '_ \\ \n" +
+                                    "    | |  | | | |  __/ | |__| | (_| | | | (_| |  __/ | | |\n" +
+                                    "    |_|  |_| |_|\\___|  \\_____|\\__,_|_|  \\__,_|\\___|_| |_|\n" +
+                                    "                                                         \n" +
+                                    "                                                         ");
+        JTextArea tArea = new JTextArea(1, 1);
+        tArea.setBackground(Color.BLACK);
+        tArea.setForeground(Color.GREEN);
+        tArea.setFont(new Font(Font.MONOSPACED, Font.BOLD, 20));
+        tArea.setText(output.toString());
+        JOptionPane.showMessageDialog(null, tArea, "The Garden", JOptionPane.PLAIN_MESSAGE);
     }
     
     //**********************************************************
@@ -59,6 +74,6 @@ public class Garden extends Room{
             output.append("Hello and Goodbye you foool, you have steped into the garden.\n")
                    .append("Now me and my beees shall be able to cut you into pieces.\n")
                    .append("I only have one question: how many years have you poisone the world with that ugly face?");
-            JOptionPane.showMessageDialog(null, output);
+        JOptionPane.showMessageDialog(null, output);
     }
 }

@@ -1,11 +1,13 @@
 /* Skeleton class that - derives from the Enemy class
  *                     - has unique stats
  *                     - displays an ascii picture of itself
+ *                     - displays a string for its attack
  * 
  */
 
 package haunted_house;
 
+//library imports
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -19,7 +21,7 @@ public class Skeleton extends Enemy {
     //             Default Constructor
     //**********************************************************
     Skeleton(){
-        super("Skeleton",(5*Game.getInstance().getCurHealthModifier()),(5*Game.getInstance().getCurDamageModifier()));
+        super("Skeleton",(5+Game.getInstance().getCurHealthModifier()),(5+Game.getInstance().getCurDamageModifier()));
     }
     
     //**********************************************************
@@ -41,13 +43,17 @@ public class Skeleton extends Enemy {
             tArea.setText(output.toString());
             JOptionPane.showMessageDialog(null, tArea, " SKELETON!", JOptionPane.PLAIN_MESSAGE);
     }
-
+    
+    
+    //**********************************************************
+    //             Attack String
+    //**********************************************************
     @Override
     public void printYoAttack() {
          StringBuilder output = new StringBuilder();
             output.append("The skeleton swings his old, rusty sword at you!\n")
                   .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
-            JOptionPane.showMessageDialog(null,output);
+        JOptionPane.showMessageDialog(null,output);
     }
 
 }

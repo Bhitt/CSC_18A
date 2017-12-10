@@ -6,6 +6,7 @@
 
 package haunted_house;
 
+//library imports
 import java.util.ArrayList;
 
 /**

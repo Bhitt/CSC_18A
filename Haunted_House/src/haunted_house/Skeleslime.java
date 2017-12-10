@@ -1,11 +1,12 @@
 /* Skeleslime class that - derives from the Enemy class
  *                       - has unique stats
  *                       - displays an ascii picture of itself
+ *                       - displays a string for its attack
  * 
  */
 
 package haunted_house;
-
+//library imports
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -19,9 +20,12 @@ public class Skeleslime extends Enemy{
     //             Default Constructor
     //**********************************************************
     Skeleslime(){
-        super("SkeleSlime",(15*Game.getInstance().getCurHealthModifier()),(15*Game.getInstance().getCurDamageModifier()));
+        super("SkeleSlime",(15+Game.getInstance().getCurHealthModifier()),(15+Game.getInstance().getCurDamageModifier()));
     }
     
+    //**********************************************************
+    //             Ascii Art
+    //**********************************************************
     @Override
     public void printYoSelf(){
         StringBuilder output = new StringBuilder();
@@ -51,12 +55,15 @@ public class Skeleslime extends Enemy{
             tArea.setText(output.toString());
             JOptionPane.showMessageDialog(null, tArea, " SKELESLIME!!!!!", JOptionPane.PLAIN_MESSAGE);
     }
-
+    
+    //**********************************************************
+    //             Attack string
+    //**********************************************************
     @Override
     public void printYoAttack() {
          StringBuilder output = new StringBuilder();
             output.append("The Skeleslime swings a green gelatanous arm at you!\n")
                   .append("It hits for ").append(this.getAttackValue()).append(" damage!\n");
-            JOptionPane.showMessageDialog(null,output);
+        JOptionPane.showMessageDialog(null,output);
     }
 }

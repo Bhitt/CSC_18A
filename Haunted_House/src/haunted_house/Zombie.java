@@ -1,6 +1,7 @@
 /* Zombie class that - derives from the Enemy class
  *                   - has unique stats
  *                   - displays an ascii picture of itself
+ *                   - displays a string for its attack
  * 
  */
 
@@ -20,9 +21,12 @@ public class Zombie extends Enemy{
     //             Default Constructor
     //**********************************************************
     Zombie(){
-        super("Zombie",(8*Game.getInstance().getCurHealthModifier()),(8*Game.getInstance().getCurDamageModifier()));
+        super("Zombie",(8+Game.getInstance().getCurHealthModifier()),(8+Game.getInstance().getCurDamageModifier()));
     }
     
+    //**********************************************************
+    //             Ascii Art
+    //**********************************************************
     @Override
     public void printYoSelf(){
         StringBuilder output = new StringBuilder();
@@ -41,6 +45,9 @@ public class Zombie extends Enemy{
             JOptionPane.showMessageDialog(null, tArea, " ZOMBIE!", JOptionPane.PLAIN_MESSAGE);
     }
 
+    //**********************************************************
+    //             Attack String
+    //**********************************************************
     @Override
     public void printYoAttack() {
          StringBuilder output = new StringBuilder();

@@ -1,5 +1,5 @@
 /* Fall 2017 CIS18A Java Final Project
- * Project Members: Branden Hitt, 
+ * Project Members: Branden Hitt, Graham, Miles, Ricardo, 
  * Main program execution starts here
  * Purpose: Gothic themed, roque-like dungeon crawler video game 
  *          which utilizes concepts learned in class.

@@ -1,10 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Bee class that - derives from the Enemy class
+ *               - has unique stats
+ *               - displays an ascii picture of itself
+ *               - displays a string for its attack
+ * 
  */
 package haunted_house;
 
+//library imports
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -21,7 +23,9 @@ public class Beee extends Enemy {
         super("Beee",3,3);
     }
     
-    
+    //**********************************************************
+    //             Ascii art
+    //**********************************************************
     @Override
     public void printYoSelf() {
         StringBuilder output = new StringBuilder();
@@ -45,7 +49,10 @@ public class Beee extends Enemy {
             //tArea.setForeground(Color.GREEN);
             JOptionPane.showMessageDialog(null, tArea, "Beee!!", JOptionPane.PLAIN_MESSAGE);
     }
-
+    
+    //**********************************************************
+    //             Attack String
+    //**********************************************************
     @Override
     public void printYoAttack() {
         StringBuilder output = new StringBuilder();

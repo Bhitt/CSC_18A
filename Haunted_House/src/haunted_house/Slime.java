@@ -1,11 +1,13 @@
 /* Slime class that - derives from the Enemy class
  *                  - has unique stats
  *                  - displays an ascii picture of itself
+ *                  - displays a string for its attack
  * 
  */
 
 package haunted_house;
 
+//library imports
 //import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JOptionPane;
@@ -20,9 +22,12 @@ public class Slime extends Enemy{
     //             Default Constructor
     //**********************************************************
     Slime(){
-        super("Slime",(2*Game.getInstance().getCurHealthModifier()),(2*Game.getInstance().getCurDamageModifier()));
+        super("Slime",(2+Game.getInstance().getCurHealthModifier()),(2+Game.getInstance().getCurDamageModifier()));
     }
     
+    //**********************************************************
+    //             Ascii Art
+    //**********************************************************
     @Override
     public void printYoSelf(){
         StringBuilder output = new StringBuilder();
@@ -42,7 +47,11 @@ public class Slime extends Enemy{
             //tArea.setForeground(Color.GREEN);
             JOptionPane.showMessageDialog(null, tArea, " SLIME!", JOptionPane.PLAIN_MESSAGE);
     }
-
+    
+    
+    //**********************************************************
+    //             Attack String
+    //**********************************************************
     @Override
     public void printYoAttack() {
          StringBuilder output = new StringBuilder();

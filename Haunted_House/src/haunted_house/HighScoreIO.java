@@ -47,7 +47,7 @@ public class HighScoreIO {
         Map<String, Integer> unsorted = readHighScoreFile();
         
         //append new death stats to end of Map (name, floors cleared)
-        
+        unsorted.put(Player.getInstance().getName(), Player.getInstance().getRoomsCleared());
         
         //sort the data from the file
         Map<String, Integer> sorted = sortMap(unsorted);
@@ -105,7 +105,7 @@ public class HighScoreIO {
             }
             //output the string
             final JDialog dialog = new JDialog();
-            dialog.setAlwaysOnTop(true);
+            dialog.setAlwaysOnTop(true);     
             JOptionPane.showMessageDialog(dialog, new JScrollPane(table));
             dialog.dispose();
         }catch(FileNotFoundException e){

@@ -22,7 +22,7 @@ public class Player {
     private int maxHealth;
     private int currentHealth;
     private int attackVal;
-    private int hitChance;
+    //private int hitChance;   later addition to gameplay
     private int roomsCleared;
     public static Player _instance;
     
@@ -34,7 +34,7 @@ public class Player {
         this.maxHealth = 100;
         this.currentHealth = 100;
         this.attackVal = 10;
-        this.hitChance = 70;
+        //this.hitChance = 70;  currently not implemented into game
         this.roomsCleared = 0;
         this.name = "John Doe";
     }
@@ -131,7 +131,7 @@ public class Player {
         this.maxHealth = 100;
         this.currentHealth = 100;
         this.attackVal = 10;
-        this.hitChance = 70;
+        //this.hitChance = 70;  currently not implemented into game
         this.roomsCleared = 0;
         //dummy dialog made to keep input window on top
         final JDialog dialog = new JDialog();

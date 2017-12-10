@@ -6,7 +6,10 @@
 
 package haunted_house;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -18,6 +21,7 @@ public class LivingRoom extends Room{
         //set values
         type = "Living Room";
         //print room greeting
+        printYoRoom();
         printGreeting();
         //spawn enemies into game
         Game.getInstance().spawnRandomEnemy(3);
@@ -35,7 +39,21 @@ public class LivingRoom extends Room{
 
     @Override
     public void printYoRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        StringBuilder output = new StringBuilder();
+                    output.append(  "  _______ _            _      _       _               _____                       \n" +
+                                    " |__   __| |          | |    (_)     (_)             |  __ \\                      \n" +
+                                    "    | |  | |__   ___  | |     ___   ___ _ __   __ _  | |__) |___   ___  _ __ ___  \n" +
+                                    "    | |  | '_ \\ / _ \\ | |    | \\ \\ / / | '_ \\ / _` | |  _  // _ \\ / _ \\| '_ ` _ \\ \n" +
+                                    "    | |  | | | |  __/ | |____| |\\ V /| | | | | (_| | | | \\ \\ (_) | (_) | | | | | |\n" +
+                                    "    |_|  |_| |_|\\___| |______|_| \\_/ |_|_| |_|\\__, | |_|  \\_\\___/ \\___/|_| |_| |_|\n" +
+                                    "                                               __/ |                              \n" +
+                                    "                                              |___/                               ");
+        JTextArea tArea = new JTextArea(1, 1);
+        tArea.setBackground(Color.BLACK);
+        tArea.setForeground(Color.ORANGE);
+        tArea.setFont(new Font(Font.MONOSPACED, Font.BOLD, 20));
+        tArea.setText(output.toString());
+        JOptionPane.showMessageDialog(null, tArea, "The Garden", JOptionPane.PLAIN_MESSAGE);
     }
     
 }

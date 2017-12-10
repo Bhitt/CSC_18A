@@ -2,7 +2,7 @@
                     - displays a list of menu items and validates the choice
  *                  - runs the action of the menu item chosen:
  *                       o starts a new game
- *                       o loads a previous game
+ *                       o loads a previous game (sort of)
  *                       o load and display a file of high scores
  *                       o exits the program
  */
@@ -87,8 +87,16 @@ public final class Menu {
     private Integer getMenuItem(){
         //create scanner
         Scanner input = new Scanner(System.in);
-        //return next Integer
-        return  input.nextInt();
+        //grab input
+        String userInput = input.next();
+        boolean isNum = validationCheck(userInput);
+        while (isNum){
+            System.out.println("Wrong input. Try again: ");
+            userInput = input.next();
+            isNum = validationCheck(userInput);
+        }
+        //return integer number
+        return Integer.parseInt(userInput);
     }
     
     //**********************************************************
@@ -105,6 +113,17 @@ public final class Menu {
     private boolean performAction(Integer selection){
         //the choice (subtract one) should match the index of items in the array
         return menuItems.get(selection - 1).doThing();
+    }
+    
+    //**********************************************************
+    //                 Make sure scanner grabs a number
+    //**********************************************************
+    public boolean validationCheck (String userInput){
+        if (!(userInput.matches("[0-9]+"))){
+            return true;
+        } else {
+            return false;
+        }
     }
     
     

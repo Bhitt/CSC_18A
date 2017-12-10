@@ -1,10 +1,12 @@
 /* LoadGameMenuItem class that - derives from the MenuItem class
- *                             - loads a file with a saved game state
- *                             - 
+ *                             - loads a file with a saved game state (future addition)
+ *                             - outputs a string to let player know there is no saving currently
  * 
  */
 
 package haunted_house;
+//import JOptionPane for dialog use
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +21,10 @@ public class LoadGameMenuItem extends MenuItem{
     @Override
     public boolean doThing(){
          //Test string
-        System.out.println("You loaded a game");
+        StringBuilder output = new StringBuilder();
+            output.append("You fool! This is a roguelike game, there are no saves.\n")
+                   .append("Every death is permanent!\n");
+        JOptionPane.showMessageDialog(null, output);
         return false;
     }
     

@@ -1,15 +1,19 @@
 /* Game class that  - implements the actions of the game
  *                  - display story
  *                  - saves states
+ *                  - handles game loop (including fighting/room building/enemy fighting)
  *
  */
 
 package haunted_house;
 
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -31,8 +35,8 @@ public class Game {
     private Game(){
         this.enemies = new ArrayList();
         this.rand = new Random();
-        this.curDamageModifier = 1;
-        this.curHealthModifier = 1;
+        this.curDamageModifier = 0;
+        this.curHealthModifier = 0;
         
     }
     
@@ -43,8 +47,8 @@ public class Game {
         //create a new character
         Player.getInstance().promptName();
         //reset modifiers
-        this.curDamageModifier = 1;
-        this.curHealthModifier = 1;
+        this.curDamageModifier = 0;
+        this.curHealthModifier = 0;
         //output the stats chosen
         showStats();
     }
@@ -66,6 +70,8 @@ public class Game {
         do{
             //enter into a room (build it)
             spawnRoom();
+            //show stats
+            showStats();
             //loop through enemies for fight
             while(enemies.size()>0 && Player.getInstance().getCurrentHealth()>0){
                 this.fightEnemy(enemies.get(0));
@@ -73,8 +79,8 @@ public class Game {
             //increment damage modifier, health modifier, rooms cleared
             if(Player.getInstance().getCurrentHealth()>0){
                 room.printVictory();
-                this.curDamageModifier++;
-                this.curHealthModifier++;
+                this.curDamageModifier+=2;
+                this.curHealthModifier+=2;
                 Player.getInstance().setRoomsCleared(Player.getInstance().getRoomsCleared()+1);
             }
             //give rewards if alive
@@ -86,8 +92,20 @@ public class Game {
                 exit = true;
             }
         }while(!exit);
+        //save death to file
+        if(Player.getInstance().getCurrentHealth()<=0){
+            //Create HighScoreIO object to add value to file
+            HighScoreIO obituary = new HighScoreIO();
+            obituary.addHighScore();
+            //display Grave with name
+            displayWake();
+            //display High score table
+            obituary.displayHighScores();
+            //return true for death
+            return true;
+        }
         //return true for death or false for alive and exiting through save
-        return true;
+        return false;
     }
     
     //**********************************************************
@@ -120,6 +138,7 @@ public class Game {
         output.append(Player.getInstance().getName()).append("\n" )
               .append("Current HP: ").append(Player.getInstance().getCurrentHealth()).append("\n")
               .append("Attack Power: ").append(Player.getInstance().getAttackVal()).append("\n")
+              .append("Enemy Heath/Damage Modifier: ").append(this.curDamageModifier).append("\n")
               .append("Rooms Cleared: ").append(Player.getInstance().getRoomsCleared());
         JOptionPane.showMessageDialog(null, output, "Player Status", JOptionPane.PLAIN_MESSAGE);
     }
@@ -190,11 +209,12 @@ public class Game {
         
         //variable to end fight
         boolean done = false;
+                
+        //show player stats
+        //showStats();   //removed to add difficulty
+        
         //print enemy
         e.printYoSelf();
-        
-        //show player stats
-        showStats();
         
         //fight
         while(!done){
@@ -227,7 +247,40 @@ public class Game {
             }
         }
 
-    } 
+    }
+    //**********************************************************
+    //          Display Grave
+    //**********************************************************
+    public void displayWake(){
+        StringBuilder output = new StringBuilder();
+            output.append(  "                  _  /)\n").append(
+                            "                 ,o / )\n").append(
+                            "                 |/)\\)\n").append(
+                            "                  /\\_\n").append(
+                            "                  \\__|=\n").append(
+                            "                 (    )\n").append(
+                            "                 __)(__\n").append(
+                            "           _____/      \\\\_____\n").append(
+                            "          |  _     ___   _   ||\n").append(
+                            "          | | \\     |   | \\  ||\n").append(
+                            "          | |  |    |   |  | ||\n").append(
+                            "          | |_/     |   |_/  ||\n").append(
+                            "          | | \\     |   |    ||\n").append(
+                            "          | |  \\    |   |    ||\n").append(
+                            "          | |   \\. _|_. | .  ||\n").append(
+                            "          |                  ||\n").append(
+                            "          |  ").append(Player.getInstance().getName()).append("\n").append(
+                            "          |                  ||\n").append(
+                            "  *       | *   **    * **   |**      **\n").append(
+                            "   \\)),,//.,/.,(//,,..,,\\||(,,.,\\\\,.((//");
+            
+            JTextArea tArea = new JTextArea(1, 1);
+            tArea.setBackground(Color.LIGHT_GRAY);
+            tArea.setForeground(Color.BLACK);
+            tArea.setFont(new Font(Font.MONOSPACED, Font.BOLD, 20));
+            tArea.setText(output.toString());
+            JOptionPane.showMessageDialog(null, tArea, "Deep and Dreamless Slumber", JOptionPane.PLAIN_MESSAGE);
+    }
 
     //**********************************************************
     //           Get current Health Modifier

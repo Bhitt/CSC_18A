@@ -19,6 +19,9 @@ public abstract class Enemy {
     private Integer attackValue;
 
     
+    //**********************************************************
+    //             Default Constructor
+    //**********************************************************
     Enemy(String t, Integer h, Integer a){
         this.type = t;
         this.health = h;

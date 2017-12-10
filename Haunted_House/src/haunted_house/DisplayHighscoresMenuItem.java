@@ -20,7 +20,9 @@ public class DisplayHighscoresMenuItem extends MenuItem {
     public boolean doThing(){
         //Create HighScoreIO object
         HighScoreIO placard = new HighScoreIO();
+        //call the display highscores function to do what i just wrote
         placard.displayHighScores();
+        //return false for exit flag
         return false;
     }
     
