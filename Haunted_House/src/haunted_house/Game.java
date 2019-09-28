@@ -79,14 +79,10 @@ public class Game {
             //increment damage modifier, health modifier, rooms cleared
             if(Player.getInstance().getCurrentHealth()>0){
                 room.printVictory();
-                this.curDamageModifier+=2;
-                this.curHealthModifier+=2;
+                this.curDamageModifier+=3;
+                this.curHealthModifier+=3;
                 Player.getInstance().setRoomsCleared(Player.getInstance().getRoomsCleared()+1);
             }
-            //give rewards if alive
-            
-            //check for save point if alive
-            
             //check for death
             if(Player.getInstance().getCurrentHealth()<=0){
                 exit = true;
